@@ -5,6 +5,10 @@
     border-color: brown;
 }
 
+.suffix{
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .textinput{
     height: 100%;
     width: 100%;

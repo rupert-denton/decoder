@@ -10,8 +10,19 @@ const getClass = (character) => {
   }
 }
 
+const splitWord = (word) => {
+  return word.split('').map((c, j) => {
+    return (
+      <span key={j} className={getClass(c)}>
+        {c}
+      </span>
+    )
+  })
+}
+
 const AnalysisArea = (props) => {
   const [showAnalysis, setShowAnalysis] = useState(false)
+  const suffixes = ['ed', 'ing', 'er']
 
   return (
     <div className="analysisframe">
@@ -20,18 +31,42 @@ const AnalysisArea = (props) => {
         <p>
           {showAnalysis &&
             props.text.split(' ').map((word, i) => {
-              console.log('Word = ' + word)
+              //you will need to create a prefix loop and once/if a prefix is found it passes the remainder of the
+              //string into the next loop for suffixes
+              // let remainingString =
+              // suffixSearch(remainingString) - if we find a prefix
+              // if we don't find a prefix pass entire string to suffixSearch()
+              // if we don't find a suffix just print entire word.
+
+              /* for() {
+                if(prefix found) {
+                  suffixSearch(remainingString)
+                  return(); once it finds a prefix returns out of the loop
+                }
+              } */
+              for (let s = 0; s < suffixes.length; s++) {
+                let suffix = suffixes[s]
+                if (word.endsWith(suffix)) {
+                  let n = word.length
+                  let tail = suffix.length
+                  let root = word.substr(0, n - tail)
+                  return (
+                    <span key={i}>
+                      <span className={'root'}>{splitWord(root)}</span>
+                      <span className={'suffix ' + suffix}>
+                        {splitWord(suffix)}
+                      </span>
+                      <span> </span>
+                    </span>
+                  )
+                }
+              }
               return (
-                <span key={i} className={word}>
-                  {word + ' '}
-                </span>
-              )
-            })}
-          {showAnalysis &&
-            props.text.split('').map((character, i) => {
-              return (
-                <span key={i} className={getClass(character)}>
-                  {character}
+                <span>
+                  <span key={i} className="general">
+                    {splitWord(word)}{' '}
+                  </span>
+                  <span> </span>
                 </span>
               )
             })}
