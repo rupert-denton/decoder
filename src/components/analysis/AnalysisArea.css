@@ -6,7 +6,9 @@
 }
 
 .suffix{
-  font-family: 'Times New Roman', Times, serif;
+  border-style: dashed;
+  border-width: 0.01rem;
+
 }
 
 .textinput{
