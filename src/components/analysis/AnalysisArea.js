@@ -22,7 +22,41 @@ const splitWord = (word) => {
 
 const AnalysisArea = (props) => {
   const [showAnalysis, setShowAnalysis] = useState(false)
-  const suffixes = ['ed', 'ing', 'er']
+  const suffixes = [
+    'ee',
+    'eer',
+    'er',
+    'ion',
+    'ism',
+    'ity',
+    'ment',
+    'ness',
+    'or',
+    'sion',
+    'ship',
+    'th',
+    'able',
+    'ible',
+    'al',
+    'ant',
+    'ary',
+    'ful',
+    'ic',
+    'ious',
+    'ous',
+    'ive',
+    'less',
+    'y',
+    'ed',
+    'en',
+    'er',
+    'ing',
+    'ize',
+    'ise',
+    'ly',
+    'ward',
+    'wise',
+  ]
 
   return (
     <div className="analysisframe">
