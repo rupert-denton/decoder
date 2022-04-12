@@ -1,45 +1,46 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import "./AnalysisArea.css";
+import './AnalysisArea.css'
 
 const getClass = (character) => {
-  if (["a", "e", "i", "o", "u"].includes(character)) {
-    return "vowel-class";
+  if (['a', 'e', 'i', 'o', 'u'].includes(character)) {
+    return 'vowel-class'
   } else {
-    return "consonant-class";
+    return 'consonant-class'
   }
-};
-
-
+}
 
 const AnalysisArea = (props) => {
-  const [showAnalysis, setShowAnalysis] = useState(false);
+  const [showAnalysis, setShowAnalysis] = useState(false)
 
   return (
     <div className="analysisframe">
-       <button onClick={() => setShowAnalysis(true)}>Analyse</button>
+      <button onClick={() => setShowAnalysis(true)}>Analyse</button>
       <div>
         <p>
           {showAnalysis &&
-            props.text.split(" ").map((word, i) => {
-              console.log(word)
-              return(
+            props.text.split(' ').map((word, i) => {
+              console.log('Word = ' + word)
+              return (
                 <span key={i} className={word}>
-                  {(i === 0 ? "" : "") + word}
+                  {word + ' '}
                 </span>
               )
-            }) &&
-            props.text.split("").map((character, i) => {
+            })}
+          {showAnalysis &&
+            props.text.split('').map((character, i) => {
               return (
                 <span key={i} className={getClass(character)}>
-                  {(i === 0 ? "" : "") + character}
+                  {character}
                 </span>
-              );
+              )
             })}
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AnalysisArea;
+export default AnalysisArea
+
+console.log('Analysis v 0.02')
