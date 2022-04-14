@@ -1,5 +1,5 @@
 {
-  "name": "decoder",
+  "name": "word-structure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
