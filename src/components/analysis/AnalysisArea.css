@@ -1,33 +1,56 @@
 .analysisframe{
-    width: 100%;
-    height: 50%;
-    border-style: solid;
-    border-color: brown;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: serif;
+  font-size: 10rem;
+  border-top-style: dashed;
+  border-color: lightgrey;
+}
+
+textarea:focus{
+  outline-style: solid;
+  outline-width: .01rem;
+  outline-color: lightgray;
+}
+
+::placeholder{
+  color: lightgray;
+}
+
+.consonant-class{
+  color: #009444;
+}
+
+.vowel-class{
+  color: #F15A29
+}
+.root{
+  text-decoration: solid underline;
+  text-decoration-thickness: 0.28rem;
+  text-decoration-color: #C8C8C8;
 }
 
 .suffix{
-  border-style: solid;
-  border-width: 0.06rem;
-
+  border-style: dashed;
+  border-width: 0.09rem;
+  border-color: #C8C8C8;
+  background: #F8F8F8;
 }
 
 .textinput{
-  padding-top: 4rem;
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  font-family: sans-serif;
-  font-size: 10rem;
+    text-align: center;
+    width: 100%;
+    font-family: serif;
+    font-size: 10rem;
+    border: none;
+    resize: none;
 }
 
 .word{
     text-decoration: underline;
 }
 
-.consonant-class{
-    color: #107896;
-}
-
-.vowel-class{
-    color: #C02F1D
-}
