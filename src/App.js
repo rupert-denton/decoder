@@ -1,11 +1,8 @@
-import "./App.css";
-import Background from "./components/UI/Background.js";
+import './App.css'
+import Card from './components/UI/Card.js'
 
 function App() {
-  return (
-    <Background>
-    </Background>
-  );
+  return <Card></Card>
 }
 
-export default App;
+export default App

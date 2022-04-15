@@ -1,9 +1,6 @@
 .card{
     background-color: white;
     height: 100vh;
-    width: 210mm;
-    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
-    /* margin-top: 4rem; */
     display: flex;
     flex-direction: column;
     align-content: flex-start;
