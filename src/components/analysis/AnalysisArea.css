@@ -28,6 +28,7 @@ textarea:focus{
 .vowel-class{
   color: #F15A29
 }
+
 .root{
   text-decoration: solid underline;
   text-decoration-thickness: 0.28rem;
@@ -39,6 +40,11 @@ textarea:focus{
   border-width: 0.09rem;
   border-color: #C8C8C8;
   background: #F8F8F8;
+}
+
+.suffix:hover{
+  cursor: pointer;
+  border-color: black;
 }
 
 .textinput{
