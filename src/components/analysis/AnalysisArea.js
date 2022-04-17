@@ -11,6 +11,7 @@ const getClass = (character) => {
 }
 
 const splitWord = (word) => {
+  console.log(word)
   return word.split('').map((c, j) => {
     return (
       <span key={j} className={getClass(c)}>
@@ -23,39 +24,22 @@ const splitWord = (word) => {
 const AnalysisArea = (props) => {
   const [showAnalysis, setShowAnalysis] = useState(false)
   const suffixes = [
-    'ee',
-    'eer',
-    'er',
-    'ion',
-    'ism',
-    'ity',
-    'ment',
-    'ness',
-    'or',
-    'sion',
-    'ship',
-    'th',
-    'able',
-    'ible',
-    'al',
-    'ant',
-    'ary',
-    'ful',
-    'ic',
-    'ious',
-    'ous',
-    'ive',
-    'less',
-    'y',
-    'ed',
-    'en',
-    'er',
-    'ing',
-    'ize',
-    'ise',
-    'ly',
-    'ward',
-    'wise',
+    {
+      name: 'er',
+      type: 'bound',
+      position: 'suffix',
+      subtype: 'derivational',
+      attachesTo: 'adjective',
+      function: 'comparative',
+    },
+    {
+      name: 'ed',
+      type: 'bound',
+      position: 'suffix',
+      subtype: 'inflectional',
+      attachesTo: 'verb',
+      function: 'past tense',
+    },
   ]
 
   return (
@@ -79,15 +63,21 @@ const AnalysisArea = (props) => {
                 }
               } */
               for (let s = 0; s < suffixes.length; s++) {
-                let suffix = suffixes[s]
+                let suffix = suffixes[s].name
                 if (word.endsWith(suffix)) {
                   let n = word.length
                   let tail = suffix.length
                   let root = word.substr(0, n - tail)
+                  console.log(suffix)
                   return (
                     <span key={i}>
                       <span className={'root'}>{splitWord(root)}</span>
-                      <span className={'suffix ' + suffix}>
+                      <span
+                        className={'suffix ' + suffix}
+                        onMouseOver={() => {
+                          console.log('clicked')
+                        }}
+                      >
                         {splitWord(suffix)}
                       </span>
                       <span> </span>
