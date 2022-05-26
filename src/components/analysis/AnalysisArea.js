@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-
 import './AnalysisArea.css'
+import infoCard from './infoCard'
 
 const getClass = (character) => {
   if (['a', 'e', 'i', 'o', 'u'].includes(character)) {
@@ -43,7 +43,7 @@ const AnalysisArea = (props) => {
   ]
 
   return (
-    <div className="analysisframe">
+    <div className="analysisarea">
       <button onClick={() => setShowAnalysis(true)}>Analyse</button>
       <div>
         <p>
